@@ -1,5 +1,12 @@
 var App = {
 	
+	decFloor: function(number, precision) {
+		var factor = Math.pow(10, precision);
+		var tempNumber = number * factor;
+		var roundedTempNumber = Math.floor(tempNumber);
+		return roundedTempNumber / factor;
+	},
+	
 	getResource: function(resourceId) {
 		return this.RepoResources.find(function(elem) {
 			
@@ -60,8 +67,9 @@ var App = {
 					var availableTotal = requestedResource.Amount;
 					var requestedTotal = currentProd.Amount * currentProc.Amount * appIntervals;
 					var testRatio = availableTotal/requestedTotal;
-					if(testRatio.toFixed(5) <= highestAvailableRatio.toFixed(5)) {
-						highestAvailableRatio.toFixed(5) = testRatio.toFixed(5);
+					//console.log(testRatio.toFixed(5),highestAvailableRatio.toFixed(5));
+					if(app.decFloor(testRatio,5) <= app.decFloor(highestAvailableRatio,5)) {
+						highestAvailableRatio = app.decFloor(testRatio,5);
 						//Work out the most you can make with the available amount.
 					}
 				}
@@ -245,7 +253,7 @@ var App = {
 			app.updateResources(userId,app.ticksPassed);
 			//app.renderBuilding();
 			app.renderStatus();
-		},app.tickInterval);
+		},app.tickInterval*10);
 	},
 	
 	
