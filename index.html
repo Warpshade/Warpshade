@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/ https://use.fontawesome.com/releases/v5.0.6/js/ data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/game.css">
+		<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>	
+        <title>Hello World</title>
+    </head>
+    <body>
+        <div class="app">
+			<div class = "main-container cols">
+				<div class = "col-1 col-sz-33 menu-container">
+					<div class = "menu-body">
+						<div class = "menu menu-building">Building</div>
+						<div class = "menu menu-research">Research</div>
+						<div class = "menu menu-miracles">Miracles</div>
+						<div class = "menu menu-status">Status</div>
+					</div>
+					<div class = "menu-tabs">
+						<div class = "tab tab-building" data-tab="building"><i class="fas fa-2x fa-home"></i></div>
+						<div class = "tab tab-research" data-tab="research"><i class="fas fa-2x fa-flask"></i></div>
+						<div class = "tab tab-miracles" data-tab="miracles"><i class="fas fa-2x fa-sun"></i></div>
+						<div class = "tab tab-status" data-tab="status"><i class="fas fa-2x fa-info-circle"></i></div>
+					</div>
+				</div>				
+				<div class = "col-2 col-sz-67">
+					<div class = "main-view">
+						<div class = "quick-details"></div>
+					</div>
+				</div>
+			</div>
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
+		<script type="text/javascript" src="js/polyfills.js"></script>
+		<!-- Classes -->
+		<script type="text/javascript" src="js/classes/Processor.js"></script>
+		<script type="text/javascript" src="js/classes/Resource.js"></script>
+		<script type="text/javascript" src="js/classes/User.js"></script>
+		<script type="text/javascript" src="js/classes/Upgrade.js"></script>
+		<script type="text/javascript" src="js/classes/ResourceGroup.js"></script>
+		
+		<!-- Enums -->
+		<script type="text/javascript" src="js/enums/UpgradeModifierMethod.js"></script>
+		<script type="text/javascript" src="js/enums/UpgradePurpose.js"></script>
+		<script type="text/javascript" src="js/enums/UpgradeTargetType.js"></script>
+		
+		<!-- Seeds -->
+		<script type="text/javascript" src="js/repository/seeds/SeedUser.js"></script>
+		<script type="text/javascript" src="js/repository/seeds/SeedProcessor.js"></script>
+		<script type="text/javascript" src="js/repository/seeds/SeedResource.js"></script>
+		<script type="text/javascript" src="js/repository/seeds/SeedUpgrade.js"></script>
+		
+		<!-- Runtime Logic -->
+        <script type="text/javascript" src="js/classes/GameManager.js"></script>
+		
+    </body>
+</html>

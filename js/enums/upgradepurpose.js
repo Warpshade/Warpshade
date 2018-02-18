@@ -1,0 +1,1 @@
+var UpgradePurpose = ["Cost","Rate"];

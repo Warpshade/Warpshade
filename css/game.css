@@ -1,0 +1,101 @@
+html, body {
+	box-sizing:border-box;
+	margin:0;
+	padding:0;
+	width:100%;
+	height:100%;
+}
+
+div {
+	box-sizing:border-box;
+}
+
+h2 {
+	margin:0;
+}
+
+.app {
+	width:100%;
+	height:100%;
+}
+
+.main-container {
+	width:100%;
+	height:100%;
+}
+
+.cols {
+	display:flex;	
+}
+
+.col-1, .col-2 {
+	flex-grow:1;
+}
+
+.col-2l {
+	flex-grow:1;
+}
+
+.col-sz-33 {
+	width:33%;
+	
+}
+
+.col-sz-67 {
+	width:67%;	
+}
+
+.menu-container {
+	position:relative;
+	height:100%;
+}
+
+.menu-body {
+	width:100%;	
+	height:100%;
+	border-right:4px solid black;
+	
+}
+
+.menu-tabs {
+	width:64px;
+	height:100%;
+	position: absolute;
+    top: 0;
+    right: -64px;	
+}
+
+.tab {
+	width:64px;
+	/*height:64px;*/
+	font-size:16px;
+	border:2px solid grey;
+	border-radius:0 16px 16px 0;
+	border-left:0;
+	margin-bottom:8px;
+	text-align: center;
+}
+
+.menu-item.building {
+	width:100%;
+	border:4px inset brown;
+	position:relative;
+	display:inline-flex;
+}
+.menu-icon {	
+}
+.menu-top, .menu-bottom {
+	display:flex;
+	flex-grow:1;
+}
+.menu-name {
+	font-size:20px;
+	flex-grow:2;
+}
+.menu-cost {
+}
+
+.svg-inline--fa.fa-2x {
+	vertical-align:middle;
+	margin:9px;
+}

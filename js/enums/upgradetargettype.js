@@ -1,0 +1,1 @@
+UpgradeTargetType = ["Processor","Resource"];
