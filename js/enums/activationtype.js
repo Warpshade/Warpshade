@@ -1,0 +1,1 @@
+var ActivationType = ["Upgrade","Research","Processor","Miracle","Event","Role"];
